@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery</title>
+	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<form id="form1">
+	<button type="submit" name="submit1" id="submit1">Boton</button>
+</form>
+<input type="text" id="arrelDades">
+<button id="btnCrearListaDatos">Crear lista</button>
+<input type="checkbox" name="ordered" value="ordered"> Ordered
+<button onclick="agregarEstilo();">Poner bonito</button>
+<div id="listado"></div>
+<script type="text/javascript">	
+	var elementoPadre = $("#listado");
+	var orden = false;
+	$("input[name='ordered']").change(function(){	
+		if($("input[name='ordered']").is(":checked") == true)
+		{
+			orden = true;
+			return orden
+		}else{
+			orden = false;
+			return orden;	
+		}
+		});
+	$("#btnCrearListaDatos").click(function(){
+		crearLista("formulario", "input[id='arrelDades']", elementoPadre, orden);
+
+	});	
+
+</script>
+</body>
+</html>
